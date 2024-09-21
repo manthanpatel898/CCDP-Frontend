@@ -1,33 +1,72 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { FaRegUser } from "react-icons/fa"; // Use the outlined user icon
+import React, { useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import { FaRegUser, FaBars, FaTimes } from "react-icons/fa";
 import "./Navbar.css";
 
 const Navbar: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation(); // Get the current route location
+
+  // Toggle mobile menu
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  // Handle link clicks: only toggle the menu if the link is not the active link
+  const handleLinkClick = (path: string) => {
+    if (location.pathname !== path) {
+      toggleMenu(); // Only close the menu if the link is not the current path
+    }
+  };
+
   return (
     <nav className="navbar">
-      <ul className="navbar-links">
+      {/* Hamburger icon for mobile */}
+      <div className="navbar-hamburger" onClick={toggleMenu}>
+        {isOpen ? <FaTimes /> : <FaBars />}
+      </div>
+
+      {/* Navbar links */}
+      <ul className={`navbar-links ${isOpen ? "active" : ""}`}>
         <li>
-          <Link to="/" className="navbar-link active">
+          <NavLink
+            to="/dashboard"
+            className={({ isActive }) => (isActive ? "navbar-link active" : "navbar-link")}
+            onClick={() => handleLinkClick("/dashboard")}  // Pass path to handleLinkClick
+          >
             Dashboard
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/patients" className="navbar-link">
+          <NavLink
+            to="/patients"
+            className={({ isActive }) => (isActive ? "navbar-link active" : "navbar-link")}
+            onClick={() => handleLinkClick("/patients")}
+          >
             Patients
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/doctors" className="navbar-link">
+          <NavLink
+            to="/doctors"
+            className={({ isActive }) => (isActive ? "navbar-link active" : "navbar-link")}
+            onClick={() => handleLinkClick("/doctors")}
+          >
             Doctors
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/medical-staffs" className="navbar-link">
+          <NavLink
+            to="/medical-staffs"
+            className={({ isActive }) => (isActive ? "navbar-link active" : "navbar-link")}
+            onClick={() => handleLinkClick("/medical-staffs")}
+          >
             Medical Staffs
-          </Link>
+          </NavLink>
         </li>
       </ul>
+
+      {/* Profile icon */}
       <div className="navbar-profile">
         <FaRegUser className="profile-icon" />
       </div>
