@@ -7,6 +7,8 @@ import Dashboard from "../pages/Dashboard/Dashboard";
 import Login from "../pages/Login/Login";
 import NotFound from "../components/WildCard/NotFound";
 import Navbar from "../pages/Navbar/Navbar";
+import Patients from "../pages/Patients/Patients";
+import PatientDetail from "../pages/Patients/PatientDetail";
 
 const AppRouting = () => {
 
@@ -24,6 +26,9 @@ const AppRouting = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/Navbar" element={<Navbar />} />
         <Route path="/Dashboard" element={<Dashboard />} />
+        <Route path="/patients" element={<Patients />} />
+        <Route path="/patients/:name" element={<PatientDetail />} />
+
       </Route>
       {/* Public route end */}
 

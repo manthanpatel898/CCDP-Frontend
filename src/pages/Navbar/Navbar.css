@@ -92,5 +92,25 @@
   .navbar-links {
     display: flex; /* Show links on larger screens */
     margin-left: auto; /* Push links to the right on desktop view */
+    align-items: center;
   }
+}
+
+/* Language dropdown */
+.navbar-language {
+  display: flex;
+  align-items: center; /* Vertically center the language dropdown */
+}
+
+.language-dropdown {
+  background-color: #f0f0f0;
+  border: none;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.language-dropdown:focus {
+  outline: none;
 }
