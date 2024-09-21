@@ -1,0 +1,21 @@
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #1f2a44; /* Dark blue button */
+    border: none;
+    border-radius: 25px; /* Fully rounded button */
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #16203a; /* Slightly darker on hover */
+  }
+  
+  .submit-button.disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+  }
+  

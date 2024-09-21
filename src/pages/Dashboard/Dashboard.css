@@ -1,0 +1,183 @@
+.dashboard {
+  padding: 50px;
+}
+
+/* Summary Boxes */
+.summary-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.summary-box {
+  background-color: #e0e6f9; /* Restored background color */
+  padding: 10px 30px;
+  border-radius: 12px;
+  text-align: left;
+  border: 1px solid black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.summary-box h4 {
+  font-size: 14px;
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+.summary-box p {
+  font-size: 32px;
+  font-weight: 300;
+  margin: 10px 0;
+}
+
+/* Active Signal Section - Restoring proper layout and alignment */
+.chart-header-with-legend {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* This ensures everything is vertically aligned */
+  margin-bottom: 10px;
+  width: 100%;
+  position: relative;
+}
+
+.active-signal-title {
+  flex-grow: 1;
+  text-align: left;
+  align-self: center;
+}
+
+.year-selector {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #f0f3ff;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 15px;
+}
+
+.year-selector select {
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+}
+
+.legend {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.legend-item {
+  margin: 0 20px;
+  font-size: 14px;
+  display: flex;
+  align-items: center; /* Vertical alignment for legend */
+}
+
+.legend-color {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+  border-radius: 3px;
+}
+
+/* Adding back color squares */
+.legend-color.distress {
+  background-color: #ff6565;
+}
+
+.legend-color.sarcF {
+  background-color: #8b8b8b;
+}
+
+.legend-color.g8 {
+  background-color: #d92d2d;
+}
+
+/* Line Chart Section - Ensuring correct year dropdown position */
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.patients-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.year-selector-line-chart {
+  background-color: #f0f3ff;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: auto;
+}
+
+.year-selector-line-chart select {
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Chart Container */
+.chart-container {
+  padding: 0;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Responsive Behavior */
+@media (max-width: 768px) {
+  .chart-header-with-legend {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .legend {
+    position: relative;
+    left: 0;
+    transform: none;
+    margin-top: 10px;
+    flex-direction: column;
+    align-items: baseline;
+  }
+
+  .year-selector {
+    transform: translateY(-70%);
+  }
+
+  .summary-container {
+    gap: 10px;
+  }
+
+  .summary-box {
+    width: 100%;
+  }
+
+  .year-selector-line-chart {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+
+  .dashboard {
+    padding: 15px;
+  }
+}

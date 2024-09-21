@@ -1,0 +1,54 @@
+.input-field-container {
+  position: relative;
+  padding-bottom: 20px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.input-label {
+  position: absolute;
+  top: 16px; /* Position the label inside the input field */
+  left: 12px;
+  font-size: 16px;
+  color: #666;
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+.input-field {
+  width: 100%;
+  padding: 20px 12px 0 12px; /* Increase top padding, reduce bottom padding */
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 12px;
+  background-color: #f8f8f8;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  height: 53px;
+  box-sizing: border-box; /* Ensure padding and border are included */
+  text-align: left;
+  vertical-align: bottom; /* Align the text towards the bottom */
+}
+
+.input-field:focus {
+  border-color: #007BFF;
+  background-color: #fff;
+  outline: none;
+}
+
+.input-field:hover {
+  border-color: #007BFF;
+}
+
+/* Floating label behavior */
+.input-label.float {
+  top: 9px; /* Move the label above the input */
+  left: 13px; /* Align the label with the input padding */
+  font-size: 12px; /* Shrink the label when it floats */
+  color: black;
+  transform: none;
+  font-weight: 600;
+}
+
+.input-field-container:last-of-type {
+  padding-bottom: 0px; /* No bottom padding for the last input */
+}
