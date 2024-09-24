@@ -1,0 +1,89 @@
+/* Ensure the modal form is responsive and adjusts based on screen size */
+.patient-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px; /* Adjust form width for larger screens */
+    box-sizing: border-box;
+  }
+  
+  /* Headline Styling */
+  .patient-form h3 {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  /* Styling for form inputs and dropdown */
+  .patient-form input,
+  .patient-form select {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%; /* Inputs and dropdown should cover full form width */
+    box-sizing: border-box;
+  }
+  /* Modal Background Styling */
+  .modal-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .formButton{
+    display: flex;
+    justify-content: space-between;
+
+    .submit-button{
+        width: 45%;
+        padding: 15px;
+    }
+
+    .cancelbtn{
+        background:rgb(205, 53, 53);
+    }
+  }
+
+  /* Modal Container */
+  .modal {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%; /* Adjust modal width for smaller screens */
+    max-width: 500px; /* Adjust modal width for larger screens */
+    box-sizing: border-box;
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    /* On smaller screens, adjust form width */
+    .patient-form {
+      max-width: 100%; /* Full width for small devices */
+    }
+  
+    /* Ensure buttons are full-width on small screens */
+  
+    /* Modal should take up full width on mobile screens */
+    .modal {
+      max-width: 100%;
+      padding: 15px;
+    }
+  
+    /* Adjust input padding for smaller screens */
+    .patient-form input,
+    .patient-form select {
+      padding: 10px;
+      font-size: 14px;
+    }
+  }
+  

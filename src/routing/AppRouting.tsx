@@ -8,7 +8,7 @@ import Login from "../pages/Login/Login";
 import NotFound from "../components/WildCard/NotFound";
 import Navbar from "../pages/Navbar/Navbar";
 import Patients from "../pages/Patients/Patients";
-import PatientDetail from "../pages/Patients/PatientDetail";
+import PatientDetail from "../pages/Patients/PatientDetails";
 
 const AppRouting = () => {
 

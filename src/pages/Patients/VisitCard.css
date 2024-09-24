@@ -1,0 +1,48 @@
+.visit-card {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .visit-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .visit-date {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .visit-id {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .visit-arrow {
+    font-size: 24px;
+    color: #666;
+  }
+  
+  .visit-signal {
+    margin-top: 10px;
+  }
+  
+  .signal-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #d9534f;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+  }
+  

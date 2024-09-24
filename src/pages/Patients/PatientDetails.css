@@ -1,0 +1,153 @@
+.patient-details-page {
+  padding: 50px;
+}
+
+.patient-header {
+  margin-bottom: 20px;
+  line-height: 30px;
+  letter-spacing: 0.5px;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.back-button svg {
+  margin-right: 5px;
+}
+
+.patient-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 12px;
+  font-weight: 300px;
+}
+
+.patient-info span{
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.left-section {
+  flex: 1;
+}
+
+.right-section {
+  flex: 1;
+  text-align: right;
+}
+
+.tabs-container {
+  display: flex;
+  gap: 20px; /* Add spacing between tabs */
+  margin-top: 20px;
+}
+
+.tab-item {
+  padding-bottom: 10px;
+  position: relative;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.tab-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20%; /* Make the underline width smaller than the word */
+  height: 5px;
+  background-color: #003399; /* Change this to the color you want for the underline */
+  border-radius: 2px;
+}
+
+.tab-item:hover {
+  color: #000;
+}
+
+.tab-item.active {
+  font-weight: bold;
+}
+
+/* Visit card styles */
+.visit-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.visit-card {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border: 1px solid #AAA;
+}
+
+.visit-card .visit-date {
+  font-size: 14px;
+  color: #333;
+}
+
+.visit-card .visit-id {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.signal-alert {
+  background-color: #d9534f;
+  color: white;
+  padding: 15px;
+  border-radius: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.signal-alert .icon {
+  color: white;
+}
+
+.next-arrow {
+  position: absolute;
+  right: 20px;
+  color: #333;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .patient-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .right-section {
+    text-align: left;
+    margin-top: 10px;
+  }
+
+  .tabs-container {
+    flex-wrap: wrap;
+  }
+  
+  .visit-card {
+    padding: 15px;
+    flex-direction: column;
+  }
+
+  .next-arrow {
+    position: static;
+    margin-top: 10px;
+  }
+}

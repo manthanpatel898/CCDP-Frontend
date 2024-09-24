@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import { FaSearch, FaChevronRight, FaSlidersH } from "react-icons/fa";
+import { FaSearch, FaChevronRight, FaSlidersH, FaPlus } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import './Patients.css'; // Custom styles
+import PatientForm from "./PatientForm"; // Assuming you have the PatientForm component created
 
 const Patients: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [isFormOpen, setIsFormOpen] = useState(false);
 
-  // Simulated dynamic patient data (added more than 10 records)
+  // Simulated dynamic patient data
   const patientsData = [
     { name: 'Guillaume Goudreau', email: 'guillaume.goudreau@gmail.com', phone: '+1 (302) 555-0107', medicare: 'BDYO19136', gender: 'Male', dob: 'Feb 29, 1988', signal: null, isActive: false },
     { name: 'Georges Charette', email: 'georges.charette@gmail.com', phone: '+1 (208) 555-0112', medicare: '3ZTABC456', gender: 'Male', dob: 'May 6, 1984', signal: 'Active signal for Distress Screening', isActive: true },
@@ -30,6 +32,14 @@ const Patients: React.FC = () => {
     navigate(`/patients/${patient.name}`, { state: patient });
   };
 
+  const handleAddPatientClick = () => {
+    setIsFormOpen(true);
+  };
+
+  const handleCloseForm = () => {
+    setIsFormOpen(false);
+  };
+
   const filteredPatients = patientsData.filter((patient) =>
     patient.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -48,11 +58,12 @@ const Patients: React.FC = () => {
               onChange={handleSearchChange}
             />
           </div>
-          <FaSlidersH className="filter-icon" /> {/* Corrected filter icon */}
+          <FaSlidersH className="filter-icon" />
+          <FaPlus className="add-icon" onClick={handleAddPatientClick} /> {/* Add icon */}
         </div>
       </div>
 
-      {/* Adding scroll container for table */}
+      {/* Table */}
       <div className="table-responsive">
         <table className="patients-table">
           <thead>
@@ -70,13 +81,9 @@ const Patients: React.FC = () => {
           <tbody>
             {filteredPatients.map((patient, index) => (
               <>
-                <tr key={index}>
+                <tr className={`vertical-line ${patient.isActive ? "active-signal-row-btn" : ""}`} key={index} onClick={() => handleRowClick(patient)}>
                   <td className="vertical-line-cell">
-                    <div
-                      className={`vertical-line ${
-                        patient.isActive ? "active-signal-line" : "normal-line"
-                      }`}
-                    ></div>
+                    <div className={`vertical-line ${patient.isActive ? "active-signal-line" : "normal-line"}`}></div>
                   </td>
                   <td>{patient.name}</td>
                   <td>{patient.email}</td>
@@ -103,6 +110,15 @@ const Patients: React.FC = () => {
           </tbody>
         </table>
       </div>
+
+      {/* Patient form modal */}
+      {isFormOpen && (
+        <div className="modal-background">
+          <div className="modal">
+            <PatientForm onClose={handleCloseForm} /> {/* Assuming PatientForm component accepts onClose prop */}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

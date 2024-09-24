@@ -1,0 +1,44 @@
+.patient-onboarding {
+    padding: 20px;
+  }
+  
+  .visit-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .visit-card-header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  
+  .visit-date, .visit-id {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .visit-arrow {
+    font-size: 20px;
+    color: #888;
+    right: 30px;
+    position: absolute;
+  }
+  
+  .visit-signal {
+    margin-top: 10px;
+  }
+  
+  .signal-button {
+    width: 100%;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
