@@ -1,5 +1,5 @@
 .patients-page {
-  padding: 50px;
+  padding: 70px;
 }
 
 .patients-header {
@@ -159,6 +159,11 @@ input[type="text"] {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+
+  .patients-page {
+    padding: 20px;
+  }
+
   input[type="text"] {
     width: 100%; /* Full width for smaller devices */
   }

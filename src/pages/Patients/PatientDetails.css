@@ -1,5 +1,5 @@
 .patient-details-page {
-  padding: 50px;
+  padding: 70px;
 }
 
 .patient-header {
@@ -26,7 +26,7 @@
   font-weight: 300px;
 }
 
-.patient-info span{
+.patient-info span {
   font-weight: 400;
   font-size: 15px;
 }
@@ -44,9 +44,13 @@
   display: flex;
   gap: 20px; /* Add spacing between tabs */
   margin-top: 20px;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent tabs from wrapping */
+  padding-bottom: 10px; /* Space between tabs and content */
 }
 
 .tab-item {
+  display: inline-block; /* Ensure each tab item is inline */
   padding-bottom: 10px;
   position: relative;
   cursor: pointer;
@@ -127,8 +131,12 @@
 }
 
 @media (max-width: 768px) {
+  .patient-details-page {
+    padding: 20px;
+  }
+
   .patient-info {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: flex-start;
   }
 
@@ -138,9 +146,14 @@
   }
 
   .tabs-container {
-    flex-wrap: wrap;
+    overflow-x: scroll; /* Enable horizontal scrolling on small devices */
+    flex-wrap: nowrap; /* Prevent wrapping */
   }
-  
+
+  .tab-item {
+    white-space: nowrap; /* Ensure tabs don't wrap on small devices */
+  }
+
   .visit-card {
     padding: 15px;
     flex-direction: column;
