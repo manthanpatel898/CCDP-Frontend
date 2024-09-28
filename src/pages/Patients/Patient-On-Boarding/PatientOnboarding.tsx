@@ -1,6 +1,6 @@
 import React from 'react';
-import VisitCard from './VisitCard'; // Importing VisitCard component
 import './PatientOnboarding.css';
+import VisitCard from '../Patient-Visit-Card/VisitCard';
 
 const PatientOnboarding: React.FC = () => {
   const visitsData = [

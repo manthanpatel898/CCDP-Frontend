@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { FaArrowLeft } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom'; // <-- Import useNavigate
-import PatientOnboarding from './PatientOnboarding'; // Import new component
 import './PatientDetails.css'; // Custom styles
+import PatientOnboarding from '../Patient-On-Boarding/PatientOnboarding';
 
 const PatientDetails: React.FC = () => {
   const navigate = useNavigate(); // <-- Initialize useNavigate hook

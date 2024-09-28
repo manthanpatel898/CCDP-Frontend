@@ -1,6 +1,6 @@
 export const config = {
     pageLimit: 10,
-    apiBaseUrl: process.env.REACT_APP_API_URL,
+    apiBaseUrl: "http://localhost:3001/",
     defaultLanguage: 'en',
     languages: ['en', 'es'],
   }
